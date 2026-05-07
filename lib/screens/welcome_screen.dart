@@ -15,7 +15,7 @@ class WelcomeScreen extends StatelessWidget {
     final proxima = provider.proximaTarefa;
 
     return Scaffold(
-      backgroundColor: AppTheme.primaryColor,
+      backgroundColor: const Color.fromARGB(255, 19, 19, 19),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24),
@@ -23,31 +23,33 @@ class WelcomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Spacer(),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.15),
-                      borderRadius: BorderRadius.circular(24),
+              Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(24),
+                      ),
+                      child: Image.asset('assets/images/logo.png', height: 110),
                     ),
-                    child: Image.asset('assets/images/logo.png', height: 110),
-                  ),
-                  const SizedBox(height: 16),
-                  const Text(
-                    'GeekHouse',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 36,
-                      fontWeight: FontWeight.w800,
+                    const SizedBox(height: 16),
+                    const Text(
+                      'GeekHouse',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 36,
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
-                  ),
-                  const Text(
-                    'Assistência Técnica',
-                    style: TextStyle(color: Colors.white70, fontSize: 16),
-                  ),
-                ],
+                    const Text(
+                      'Assistência Técnica',
+                      style: TextStyle(color: Colors.white70, fontSize: 16),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 48),
               if (proxima != null) ...[
@@ -115,7 +117,7 @@ class WelcomeScreen extends StatelessWidget {
                 label: 'Ver todas as OS',
                 icon: Icons.list_alt,
                 color: Colors.white,
-                foregroundColor: AppTheme.primaryColor,
+                foregroundColor: const Color.fromARGB(255, 19, 19, 19),
                 onPressed: () => Navigator.pushNamed(context, AppRoutes.list),
               ),
               const SizedBox(height: 8),
